@@ -1,4 +1,3 @@
-
 <h1>What is XBooster?</h1>
 XBooster is an Booster Plugin for Pocketmine-MP.
 <h1>What does it do?</h1>
