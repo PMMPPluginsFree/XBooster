@@ -11,3 +11,6 @@ Players can activate the Fly or Break booster for 10 Minutes, but only if they h
 /booster info - See how much boosters you have.
 <h1>Permissions</h1>
  Give Players Booster - booster.give
+<h1>FAQ</h1>
+ <h3>Any suggestions?</h3>
+ Join my Discord Server for help and give feedback. https://discord.gg/mBGcYQG4se
