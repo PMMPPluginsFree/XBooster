@@ -4,6 +4,7 @@ XBooster is an Booster Plugin for Pocketmine-MP.
 Players can activate the Fly or Break booster for 10 Minutes, but only if they have enought boosters.
 <h1>Commands</h1>
 /booster - Open the Booster UI.
+</br>
 /booster fly - Activate the Fly Booster.
 </br>
 /booster break - Activate the Break Booster.
