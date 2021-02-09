@@ -22,6 +22,8 @@ use jojoe77777\FormAPI\SimpleForm;
 class Main extends PluginBase implements Listener
 {
     const PREFIX = "§6§lBooster §r§8: ";
+    public $delay = [];
+
     public function onEnable()
     {
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
