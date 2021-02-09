@@ -5,8 +5,11 @@ Players can activate the Fly or Break booster for 10 Minutes, but only if they h
 <h1>Commands</h1>
 /booster - Open the Booster UI.
 /booster fly - Activate the Fly Booster.
+</br>
 /booster break - Activate the Break Booster.
+</br>
 /booster give <Player> <Amount> - Give Players Booster.
+ </br>
 /booster info - See how much boosters you have.
 <h1>Permissions</h1>
  Give Players Booster - booster.give
