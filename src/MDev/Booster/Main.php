@@ -165,6 +165,7 @@ class Main extends PluginBase implements Listener
                     }
                     $name = $player->getName();
                     foreach ($this->getServer()->getOnlinePlayers() as $players) {
+                        assert($players instanceof Player);
                         $players->setAllowFlight(true);
                         $this->getServer()->broadcastMessage(self::PREFIX . "§6" . $name . " §7activated the §6Fly§7 Booster! Now you can Fly for §610§7 Minutes!");
                         $this->delay[$player->getName()] = $this->getScheduler()->scheduleDelayedTask(new \MDev\Booster\FlyBooster($this, $player), 12000);
@@ -192,6 +193,7 @@ class Main extends PluginBase implements Listener
                     }
                     $name = $player->getName();
                     foreach ($this->getServer()->getOnlinePlayers() as $players) {
+                        assert($player instanceof Player);
                         $effect = new EffectInstance(Effect::getEffect(3), 9999999, 4, false);
                         $player->addEffect($effect);
                         $this->getServer()->broadcastMessage(self::PREFIX . "§6" . $name . " §7activated the §6Break§7 Booster! Now you can Break blocks faster for §610§7 Minutes!");
