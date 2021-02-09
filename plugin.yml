@@ -1,0 +1,8 @@
+name: XBooster
+main: MDev\Booster\Main
+author: MDev
+version: 1.0.0
+api: 3.0.0
+commands:
+  booster:
+    description: Booster Command.
