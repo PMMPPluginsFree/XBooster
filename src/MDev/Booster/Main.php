@@ -37,8 +37,8 @@ class Main extends PluginBase implements Listener
             $players->setAllowFlight(false);
             $this->getLogger()->info(self::PREFIX . "§cPlugin was deactivated and all Boosters too.");
             $config = new Config($this->getDataFolder() . "boosters.yml", Config::YAML);
-            $config->set("FlyBoosterActive", "false");
-            $config->set("BreakBoosterActive", "false");
+            $config->set("FlyBoosterActive", false);
+            $config->set("BreakBoosterActive", false);
             $config->save();
         }
     }
@@ -46,21 +46,21 @@ class Main extends PluginBase implements Listener
     public function onJoin(PlayerJoinEvent $event){
         $config = new Config($this->getDataFolder() . "boosters.yml", Config::YAML);
         $player = $event->getPlayer();
-        if($config->get("BreakBoosterActive") == "true"){
+        if($config->get("BreakBoosterActive") == true){
             $effect = new EffectInstance(Effect::getEffect(3), 9999999, 4, false);
             $player->addEffect($effect);
             $player->sendMessage(self::PREFIX . "§7The §6Break §7Booster is active right now. So you can break blocks faster.");
         }
-        if($config->get("BreakBoosterActive") == "false"){
+        if($config->get("BreakBoosterActive") == false){
             $event->getPlayer()->removeEffect(3);
         }
-        if($config->get("FlyBoosterActive") == "false"){
+        if($config->get("FlyBoosterActive") == false){
             $event->getPlayer()->setAllowFlight(false);
             if($event->getPlayer()->isOp()){
                 $event->getPlayer()->setAllowFlight(true);
             }
         }
-        if($config->get("FlyBoosterActive") == "true"){
+        if($config->get("FlyBoosterActive") == true){
             $player->setAllowFlight(true);
             $player->sendMessage(self::PREFIX . "§7The §6Fly §7Booster is active right now. So you can fly.");
         }
@@ -82,7 +82,7 @@ class Main extends PluginBase implements Listener
                         $player->sendMessage(self::PREFIX . "§cYou don't have enought boosters.");
                         return true;
                     }
-                    if($config->get("FlyBoosterActive") == "true"){
+                    if($config->get("FlyBoosterActive") == true){
                         $player->sendMessage(self::PREFIX . "§cThe §6Fly §cBooster is already activated.");
                         return true;
                     }
@@ -95,7 +95,7 @@ class Main extends PluginBase implements Listener
                         $config->set($player->getName(), $new);
                         $config->save();
                         $config = new Config($this->getDataFolder() . "boosters.yml", Config::YAML);
-                        $config->set("FlyBoosterActive", "true");
+                        $config->set("FlyBoosterActive",  true);
                         $config->save();
                     }
                     break;
@@ -110,7 +110,7 @@ class Main extends PluginBase implements Listener
                         $player->sendMessage(self::PREFIX . "§cYou don't have enought boosters.");
                         return true;
                     }
-                    if($config->get("BreakBoosterActive") == "true"){
+                    if($config->get("BreakBoosterActive") == true){
                         $player->sendMessage(self::PREFIX . "§cThe §6Break §cBooster is already activated.");
                         return true;
                     }
@@ -124,7 +124,7 @@ class Main extends PluginBase implements Listener
                         $config->set($player->getName(), $new);
                         $config->save();
                         $config = new Config($this->getDataFolder() . "boosters.yml", Config::YAML);
-                        $config->set("BreakBoosterActive", "true");
+                        $config->set("BreakBoosterActive", true);
                         $config->save();
                     }
                     break;
@@ -161,7 +161,7 @@ class Main extends PluginBase implements Listener
                         $player->sendMessage(self::PREFIX . "§cYou don't have enought boosters.");
                         return true;
                     }
-                    if($config->get("FlyBoosterActive") == "true"){
+                    if($config->get("FlyBoosterActive") == true){
                         $player->sendMessage(self::PREFIX . "§cThe §6Fly §cBooster is already activated.");
                         return true;
                     }
@@ -175,7 +175,7 @@ class Main extends PluginBase implements Listener
                         $config->set($player->getName(), $new);
                         $config->save();
                         $config = new Config($this->getDataFolder() . "boosters.yml", Config::YAML);
-                        $config->set("FlyBoosterActive", "true");
+                        $config->set("FlyBoosterActive", true);
                         $config->save();
                     }
                 }
@@ -204,7 +204,7 @@ class Main extends PluginBase implements Listener
                         $config->set($player->getName(), $new);
                         $config->save();
                         $config = new Config($this->getDataFolder() . "boosters.yml", Config::YAML);
-                        $config->set("BreakBoosterActive", "true");
+                        $config->set("BreakBoosterActive", true);
                         $config->save();
                     }
                 }
